@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hth · 主题叙事</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f1f3f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            padding: 2rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 960px;
+            width: 100%;
+        }
+
+        /* 开场短句 — 大号衬线感 */
+        .opening {
+            font-size: 2rem;
+            font-weight: 350;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 2.25rem;
+            padding: 1.25rem 0 0.5rem 0;
+            border-bottom: 1px solid #d6dce5;
+            color: #1e2b3c;
+        }
+
+        .opening em {
+            font-style: normal;
+            background: linear-gradient(145deg, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 450;
+        }
+
+        /* 承接段落 */
+        .lead {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0,0,0,0.03);
+            padding: 2rem 2rem 2.25rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #e2e8f0;
+            font-size: 1.05rem;
+        }
+
+        .lead p {
+            margin-bottom: 1.2rem;
+        }
+
+        .lead p:last-child {
+            margin-bottom: 0;
+        }
+
+        .lead a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .lead a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* 特点列表 — 卡片网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0 3rem 0;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0,0,0,0.02);
+            padding: 1.75rem 1.5rem 1.85rem;
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0,0,0,0.02);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.7rem;
+            color: #0b1a2f;
+        }
+
+        .feature-card p {
+            font-size: 0.96rem;
+            color: #334155;
+            line-height: 1.65;
+        }
+
+        .feature-card .icon-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            margin-bottom: 0.9rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            padding: 2rem 2rem 2rem;
+            margin-top: 1rem;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .closing p {
+            margin-bottom: 0.85rem;
+        }
+
+        .closing p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #94a3b8;
+            transition: border-color 0.15s;
+        }
+
+        .closing a:hover {
+            border-bottom-color: #0f172a;
+        }
+
+        /* 极简页脚 */
+        .footer-note {
+            margin-top: 3.5rem;
+            font-size: 0.8rem;
+            color: #64748b;
+            text-align: center;
+            border-top: 1px solid #dce2ec;
+            padding-top: 1.75rem;
+            letter-spacing: 0.2px;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 540px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+            .opening {
+                font-size: 1.55rem;
+            }
+            .lead, .closing {
+                padding: 1.5rem 1.2rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <div class="opening">
+        从一条路径开始，<br>让结构变得清晰 —— <em>hth</em>
+    </div>
+
+    <!-- 承接段落 -->
+    <div class="lead">
+        <p>在数字连接与系统构建中，标识与拓扑往往决定了表达的效率。<a href="https://ssl-cn-hth.com">hth</a> 所对应的并非单一节点，而是一组围绕信息组织、链路简化和稳定交互展开的实践。透过命名所承载的背景，可以观察到一种趋向：将复杂映射为可复用的模式，降低认知负载。</p>
+        <p>如同每个协议背后都有一套隐含的约定，关键词「hth」也指向了类似的“结构优先”思路。它不追求宽泛的覆盖，而是在具体场景中提供明确的位置感——当你需要定义边界、锚定交互或归纳逻辑流向时，一个经过推敲的标识往往比冗长的描述更可靠。</p>
+    </div>
+
+    <!-- 特点列表 |
+         信息密度略高，用短标签 + 解释，不使用夸张词 -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="icon-tag">✦ 语义锚点</span>
+            <h3>定位而非装饰</h3>
+            <p>每个标识都承担分类与指引用途。在信息层级中，<strong>hth</strong> 倾向于成为可被引用的坐标，帮助参与者快速对齐上下文。</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon-tag">✦ 结构复用</span>
+            <h3>模式而非孤例</h3>
+            <p>当一种命名或约定经过多次验证，便会沉淀为模块。这与模块化设计的思路一致：减少重复决策，让注意力集中在例外情况上。</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon-tag">✦ 边界感</span>
+            <h3>区分而非含混</h3>
+            <p>清晰的边界是可靠系统的前提。<strong>hth</strong> 所代表的往往是一组有限状态与明确入口——你在哪，能做什么，都一目了然。</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon-tag">✦ 稳定引用</span>
+            <h3>接口而非实现</h3>
+            <p>无论是文档、配置还是界面，稳定的标识能够作为长期引用的基础。不必每次重新描述，只需指向那个不变的词。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + FAQ 摘要风格 -->
+    <div class="closing">
+        <p><strong>一些简短的补充</strong> · 标识的意义往往在使用中逐渐显露。如果你正在评估某个命名或路径是否合适，不妨先问：它是否让下一步更简单？是否能在不同画面中保持一致？</p>
+        <p>关于 <a href="https://ssl-cn-hth.com">hth</a> 的更多上下文，可以从其所在的结构中进一步阅读。它不是终点，而是线索——顺着它，你会遇到经过整理的逻辑与界面。</p>
+        <p style="color:#475569; margin-top:0.8rem; font-size:0.95rem;">FAQ 摘要：为什么强调标识的稳定性？因为频繁变动的命名会让所有依赖它的链路产生额外维护成本。一个经过推敲的标识，本身就是一份沉默的文档。</p>
+    </div>
+
+    <!-- 页脚（极简） -->
+    <div class="footer-note">
+        · 主题叙事 · 结构优先 ·
+    </div>
+
+</div>
+</body>
+</html>
